@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="CodeForge - Creating new oppprtunities around the world.">
+<title>CodeForge</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="supabase.js"></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="navbar" id="navbar">
+<a href="index.html" class="logo logo-y">
+<logo-mark class="logo-mark"><\></logo-mark>
+<h1 class="logo-content">CODE<span>FORGE</span></h1>
+</a>
+<nav class="nav-menu" id="navMenu">
+<a href="index.html" class="nav-menu a">Home</a>
+<a href="about.html" class="nav-menu a">About</a>
+<a href="projects.html" class="nav-menu a">Projects</a>
+<a href="team.html" class="nav-menu a">Team</a>
+<a href="contact.html" class="nav-menu a">Contact</a>
+<a href="careers.html" class="active">Careers</a>
+</nav>
+<nav class="nav-actions">
+<button class="search-btn" id="searchBtn" aria-label="search">🔍</button>
+<button class="menu-btn" id="menuBtn">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+<button class="theme-btn" id="themeBtn">Dark Mode</button>
+</nav>
+</header>
+<main>
+<section class="hero careers-hero">
+<div class="hero-content">
+<h1>Our Job<br>Opprtunities</h1>
+<p>Jobs you can apply for and make a difference.</p>
+<a href="index.html" class="nav-look">Home > Careers</a><br>
+<a href="#jobs" class="btn btn-white">Find Opportunities →</a> 
+</div>
+</section>
+<section class="slip careers-slip">
+<div class="slip-content">
+<div class="slip-image">
+<img src="images/team.png">
+</div>
+<div class="slip-reveal">
+<span class="eyebrow">Life at CodeForge</span>
+<h1>Bring your all</h1>
+<div class="careers-reveal">
+<p>In CodeForge, great ideas are a sum total of the collective effort. Great ideas and strategies
+    come from different backgrounds, experiences and perspectives.</p>
+<p>We hope to build a community from different backgrounds, but still be united by the same passion: 
+    problem-solving, creativity and the desire to build a better future with code.</p>
+<p>We create a scenario where individuals feel challenged and inspired to make a difference,
+     an impact in the society with code.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="app" id="jobs">
+<div class="app-content">
+<span class="eyebrow light-eyebrow">OPPORTUNITIES</span>
+<h1>Discover a proposed position for yourself</h1>
+<div class="app-grid">
+<div class="app-card">
+<h1>Software Engineer</h1>
+<p>Builds digital softwares that aids the team and our customers to grow.</p>
+<a href="careers.html" class="text-link">View position →</a>
+</div>
+<div class="app-card">
+<h1>Front-end developer</h1>
+<p>Creates clean, interactive and functional web interfaces.</p>
+<a href="careers.html" class="text-link">View position →</a>
+</div>
+<div class="app-card">
+<h1>Back-end developer</h1>
+<p>Takes charge of all businesses concerning the servers, databases and the API's.</p>
+<a href="careers.html" class="text-link">View position →</a>
+</div>
+<div class="app-card">
+<h1>Full-stack developer</h1>
+<p>Takes charge of both the front-end and back-end.</p>
+<a href="careers.html" class="text-link">View position →</a>
+</div>
+</div>
+</div>
+</section>
+<section class="apply">
+<h1>Sign up by creating an account with us</h1>
+<div class="box">
+<h2>Create Your Account</h2>
+
+<form id="signupForm">
+  <div class="input-box">
+    <input
+      type="text"
+      id="fullName"
+      placeholder="Full Name"
+      required
+    >
+  </div>
+  <div class="input-box">
+    <input
+      type="email"
+      id="email"
+      placeholder="Email Address"
+      required
+    >
+  </div>
+  <div class="input-box">
+    <input
+      type="password"
+      id="password"
+      placeholder="Create Password"
+      required
+    >
+    <span class="eye" id="eye">&#x1F441;</span>
+  </div>
+
+  <div class="strength">
+    <div class="bar" id="bar"></div>
+  </div>
+
+  <div class="news" id="news">Start typing...</div>
+
+  <div class="input-box">
+    <input
+      type="password"
+      id="confirmPassword"
+      placeholder="Confirm Password"
+      required
+    >
+  </div>
+
+  <button type="submit" class="btn btn-blue">
+    Create Account
+  </button>
+
+  <p id="signupStatus"></p>
+</form>
+</div>
+</section>
+<section class="footer careers-footer">
+<div class="footer-content">
+<div class="footer-intro">
+<a href="index.html" class="logo logo-t">
+<logo-mark class="logo-mark"><\></logo-mark>
+<h1 class="logo-content">CODE<span>FORGE</span></h1>
+</a>
+<p>© 2026 RefreshCo. All rights reserved.</p>
+</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="projects.html">Projects</a>
+<a href="team.html">Team</a>
+<a href="contact.html">Contact</a>
+<a href="careers.html">Careers</a>
+</div>
+<div class="footer-end">
+<article class="social-links">
+<a href="https://youtube.com"><img src="images/Youtube.jpg"></a>
+<a href="https://x.com"><img src="images/x.jpg"></a>
+<a href="https://github.com"><img src="images/github.jpg"></a>
+<a href="https://google.com" target="_blank"><img src="images/insta.jpg"></a>
+</article>
+<div>
+<p>Better Code - Brighter Future</p>
+</div>
+</div>
+</div>
+</section>
+<btn><a href="#" class="end careers-end">↑</a></btn>
+</main>
+<div class="search-overlay" id="searchOverlay">
+<button class="close-search" id="closeSearch">
+    ×
+</button>
+<div class="search-container">
+    <span class="eyebrow light-eyebrow">
+        Search
+    </span>
+    <input
+        type="search"
+        id="searchInput"
+        placeholder="What are you looking for?"
+    >
+</div>
+</div>
+</body>
+</html>

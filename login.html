@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | CodeForge</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: white;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+            padding: 35px;
+            background: #1e293b;
+            border-radius: 16px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            text-align: center;
+            color: #38bdf8;
+        }
+
+        .subtitle {
+            margin-bottom: 28px;
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        label {
+            display: block;
+            margin: 16px 0 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            background: #0f172a;
+            color: white;
+            font-size: 16px;
+        }
+
+        input:focus {
+            outline: 2px solid #38bdf8;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 22px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #0284c7;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0369a1;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: wait;
+        }
+
+        #loginStatus {
+            margin-top: 18px;
+            line-height: 1.5;
+            overflow-wrap: anywhere;
+        }
+
+        .signup-link {
+            margin-top: 22px;
+            text-align: center;
+            color: #cbd5e1;
+        }
+
+        a {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="login-box">
+        <h1>CodeForge</h1>
+        <p class="subtitle">Welcome back! Sign in to your account.</p>
+
+        <form id="loginForm">
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                autocomplete="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                autocomplete="current-password"
+                placeholder="Enter your password"
+                required
+            >
+
+            <button type="submit" id="loginButton">
+                Sign In
+            </button>
+
+            <p id="loginStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <p class="signup-link">
+            Don't have an account?
+            <a href="careers.html">Create one</a>
+        </p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+
+    <script>
+        const loginForm = document.getElementById("loginForm");
+        const loginStatus = document.getElementById("loginStatus");
+        const loginButton = document.getElementById("loginButton");
+
+        loginForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            loginStatus.textContent = "";
+            loginStatus.style.color = "";
+
+            loginButton.disabled = true;
+            loginButton.textContent = "Signing in...";
+
+            try {
+                const { data, error } =
+                    await supabaseClient.auth.signInWithPassword({
+                        email: email,
+                        password: password
+                    });
+
+                if (error) {
+                    throw error;
+                }
+
+                loginStatus.textContent = "Login successful! Welcome to CodeForge.";
+                loginStatus.style.color = "#4ade80";
+
+                // Temporary destination after login.
+                // We will add proper account-specific pages later.
+                window.location.href = "index.html";
+
+            } catch (error) {
+                loginStatus.textContent =
+                    error.message || "Login failed. Please try again.";
+                loginStatus.style.color = "#f87171";
+            } finally {
+                loginButton.disabled = false;
+                loginButton.textContent = "Sign In";
+            }
+        });
+    </script>
+</body>
+</html>
