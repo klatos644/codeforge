@@ -1749,3 +1749,286 @@ top: 667px;
     }
 
 }
+/* ========================================
+   CODEFORGE MOBILE LAYOUT REPAIR
+   ======================================== */
+
+@media (max-width: 760px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    align-items: stretch;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  /* Keep the navigation inside the phone screen */
+  .navbar {
+    width: calc(100% - 20px);
+    left: 10px;
+    right: 10px;
+    top: 8px;
+    margin: 0;
+    padding: 8px 10px;
+    z-index: 1000;
+  }
+
+  .logo {
+    gap: 7px;
+  }
+
+  .logo-y {
+    margin-left: 0;
+  }
+
+  .logo h1 {
+    font-size: 19px;
+  }
+
+  .nav-actions {
+    gap: 8px;
+    margin-right: 0;
+  }
+
+  .menu-btn {
+    margin-left: 0;
+  }
+
+  /* Fix the home hero */
+  .hero,
+  .about-hero,
+  .projects-hero,
+  .team-hero,
+  .contact-hero,
+  .careers-hero {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: calc(100% - 20px);
+    max-width: 100%;
+    margin: 90px 10px 25px;
+    padding: 65px 20px;
+    min-height: 0;
+    height: auto;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .hero-content {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .hero-eyebrow {
+    margin-left: 0;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(36px, 10vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+    overflow-wrap: break-word;
+  }
+
+  .btn-group {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 12px;
+    margin: 25px 0 0;
+  }
+
+  .eyebrow {
+    font-size: 23px;
+  }
+
+  /* Remove large desktop offsets from content sections */
+  .gray,
+  .split,
+  .careers,
+  .slip,
+  .stat,
+  .page-stat,
+  .spit,
+  .team-split,
+  .sant {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: calc(100% - 20px);
+    max-width: 100%;
+    margin: 25px 10px;
+    padding: 35px 18px;
+    height: auto;
+  }
+
+  /* Stack content instead of squeezing it side by side */
+  .gray-content,
+  .split-door {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .gray-heading,
+  .gray-grid {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .gray-heading h1,
+  .split-heading h1,
+  .stat-content h1 {
+    font-size: clamp(28px, 7vw, 40px);
+    overflow-wrap: break-word;
+  }
+
+  .gray-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split-grid {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .split-link {
+    margin-left: 0;
+  }
+
+  .careers-content h1 {
+    font-size: clamp(32px, 9vw, 46px);
+    overflow-wrap: break-word;
+  }
+
+  .careers-content p {
+    font-size: 17px;
+  }
+
+  .slip-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 25px;
+  }
+
+  .slip-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .stat-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .stat-card {
+    border-right: none;
+    padding: 10px 4px;
+  }
+
+  .spit-content {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .spit-card img {
+    width: 100%;
+    height: auto;
+  }
+
+  .btn-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Contact form and details */
+  .state,
+  .state-content {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .state-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .state-form,
+  .contact-info {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .state-form input,
+  .state-form textarea,
+  .state-form select {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .state-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Footer and common text */
+  footer,
+  .footer,
+  .end {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: calc(100% - 20px);
+    max-width: 100%;
+    margin: 25px 10px;
+    padding: 25px 15px;
+  }
+
+  .footer *,
+  .end * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero,
+  .about-hero,
+  .projects-hero,
+  .team-hero,
+  .contact-hero,
+  .careers-hero {
+    padding: 50px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .logo h1 {
+    font-size: 17px;
+  }
+
+  .search-btn {
+    width: 34px;
+    height: 34px;
+  }
+}
